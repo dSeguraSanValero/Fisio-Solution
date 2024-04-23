@@ -1,0 +1,63 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FisioSolution.Presentation/1.0.0": {
+        "dependencies": {
+          "FisioSolution.Business": "1.0.0"
+        },
+        "runtime": {
+          "FisioSolution.Presentation.dll": {}
+        }
+      },
+      "FisioSolution.Business/1.0.0": {
+        "dependencies": {
+          "FisioSolution.Data": "1.0.0",
+          "FisioSolution.Models": "1.0.0"
+        },
+        "runtime": {
+          "FisioSolution.Business.dll": {}
+        }
+      },
+      "FisioSolution.Data/1.0.0": {
+        "dependencies": {
+          "FisioSolution.Models": "1.0.0"
+        },
+        "runtime": {
+          "FisioSolution.Data.dll": {}
+        }
+      },
+      "FisioSolution.Models/1.0.0": {
+        "runtime": {
+          "FisioSolution.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FisioSolution.Presentation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FisioSolution.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FisioSolution.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FisioSolution.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

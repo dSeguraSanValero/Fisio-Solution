@@ -1,0 +1,88 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "FisioSolution.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/FisioSolution.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FisioSolution.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FisioSolution.Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/FisioSolution.Models.csproj",
+      "msbuildProject": "../Models/FisioSolution.Models.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "FisioSolution.Models >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Data\\FisioSolution.Data.csproj",
+      "projectName": "FisioSolution.Data",
+      "projectPath": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Data\\FisioSolution.Data.csproj",
+      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Data\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\FisioSolution.Models.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\FisioSolution.Models.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.319\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

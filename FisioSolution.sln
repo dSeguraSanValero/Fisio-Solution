@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FisioSolution.Presentation", "Presentation\FisioSolution.Presentation.csproj", "{17669A30-0171-4A01-9568-78277C91B826}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FisioSolution.Business", "Business\FisioSolution.Business.csproj", "{AF1013C3-08BA-44A7-9696-F470B4953C83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FisioSolution.Models", "Models\FisioSolution.Models.csproj", "{127224A9-4EC4-4368-B507-CA2FF014E137}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FisioSolution.Data", "Data\FisioSolution.Data.csproj", "{C7811E41-9B29-40A4-BC68-15E21FF2C69B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17669A30-0171-4A01-9568-78277C91B826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17669A30-0171-4A01-9568-78277C91B826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17669A30-0171-4A01-9568-78277C91B826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17669A30-0171-4A01-9568-78277C91B826}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF1013C3-08BA-44A7-9696-F470B4953C83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF1013C3-08BA-44A7-9696-F470B4953C83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF1013C3-08BA-44A7-9696-F470B4953C83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF1013C3-08BA-44A7-9696-F470B4953C83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{127224A9-4EC4-4368-B507-CA2FF014E137}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{127224A9-4EC4-4368-B507-CA2FF014E137}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{127224A9-4EC4-4368-B507-CA2FF014E137}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{127224A9-4EC4-4368-B507-CA2FF014E137}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7811E41-9B29-40A4-BC68-15E21FF2C69B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7811E41-9B29-40A4-BC68-15E21FF2C69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7811E41-9B29-40A4-BC68-15E21FF2C69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7811E41-9B29-40A4-BC68-15E21FF2C69B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
