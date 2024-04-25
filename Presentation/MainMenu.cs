@@ -6,15 +6,19 @@ public class MainMenu
 {
     public readonly IPhysioService _physioService;
 
-    public MainMenu(IPhysioService physioService)
+    public readonly IPatientService _patientService;
+
+    public MainMenu(IPhysioService physioService, IPatientService patientService)
     {
         _physioService = physioService;
+        _patientService = patientService;
     }
 
+    public Check check = new Check();
 
     public void MenuPrincipal()
     {
-    Console.WriteLine("~~~~~~~~~~~~~~~~ BIENVENIDO A FISIO SOLUTION ~~~~~~~~~~~~~~~~");
+    Console.WriteLine("BIENVENIDO A FISIO SOLUTION");
     Console.WriteLine("1: Registrar nuevo usuario");
     Console.WriteLine("2: Iniciar sesión");
     Console.WriteLine("3: Zona pública");
@@ -55,34 +59,67 @@ public class MainMenu
         {
             case "1":
             Console.WriteLine("Introduce tu nombre:");
-            string name = _physioService.CheckNull();
+            string physioName = check.CheckNull();
             
             Console.WriteLine("Introduce tu contraseña:");
-            string password = _physioService.CheckNull();
+            string physioPassword = check.CheckNull();
 
             Console.WriteLine("¿Te encuentras en activo y listo para tratar pacientes?: y/n");
-            string yes_No = _physioService.CheckAvaileable();
-            bool availeable = (yes_No == "y");
+            string physioInput = check.CheckBoolean();
+            bool availeable = (physioInput == "y");
 
             Console.WriteLine("Introduce tu horario de apertura (Por ejemplo 8:00):");
-            TimeSpan horaApertura = _physioService.CheckTimeSpan();
+            TimeSpan horaApertura = check.CheckTimeSpan();
 
             Console.WriteLine("Introduce tu horario de cierre (Por ejemplo 16:00):");
-            TimeSpan horaCierre = _physioService.CheckTimeSpan();
+            TimeSpan horaCierre = check.CheckTimeSpan();
 
             Console.WriteLine("Introduce tu precio por sesión (Por ejemplo 40,00):");
-            decimal price = _physioService.CheckDecimal();
+            decimal price = check.CheckDecimal();
             
-            // if (checkPhysio logic)
-            _physioService.RegisterPhysio(name, password, availeable, horaApertura, horaCierre, price);
 
+
+            // Programar lógica para verificar si ya existe fisioterapeuta con esos datos
+
+
+            _physioService.RegisterPhysio(physioName, physioPassword, availeable, horaApertura, horaCierre, price);
+            MenuPrincipal();
             break;
+
+
             case "2":
-            Console.WriteLine("2: Por programar");
+            Console.WriteLine("Introduce tu nombre:");
+            string patientName = check.CheckNull();
+            
+            Console.WriteLine("Introduce tu contraseña:");
+            string patientPassword = check.CheckNull();
+
+            Console.WriteLine("Introduce tu fecha de nacimiento:");
+            DateTime fechaNacimiento = check.CheckDateTime();
+
+            Console.WriteLine("Introduce tu peso (por ejemplo 75,43):");
+            decimal weight = check.CheckDecimal();
+
+            Console.WriteLine("Introduce tu altura (por ejemplo 1,74):");
+            decimal height = check.CheckDecimal();
+
+            Console.WriteLine("¿Tienes seguro médico?: y/n");
+            string patientInput = check.CheckBoolean();
+            bool insurance = (patientInput == "y");
+
+
+            // programar lógica para verificar existencia de paciente con esos datos
+
+
+            _patientService.RegisterPatient(patientName, patientPassword, fechaNacimiento, weight, height, insurance);
+            MenuPrincipal();
             break;
+
             case "3":
             MenuPrincipal();
-            break;            
+            break;
+
+
             default:
             Console.WriteLine("¡Opción no válida!");
             MenuPrincipal();

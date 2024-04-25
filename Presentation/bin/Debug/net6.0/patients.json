@@ -1,0 +1,11 @@
+[
+  {
+    "Id": 0,
+    "Name": "Juaniko",
+    "Password": "1234",
+    "BirthDate": "1993-05-11T00:00:00",
+    "Weight": 78.07,
+    "Height": 1.80,
+    "Insurance": false
+  }
+]
