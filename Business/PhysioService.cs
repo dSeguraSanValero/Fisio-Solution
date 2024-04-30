@@ -66,4 +66,25 @@ public class PhysioService : IPhysioService
             throw new Exception("Ha ocurrido un error al obtener el usuario", e);
         }
     }
+
+    public bool CheckLoginPhysio(int registrationNumber, string password)
+    {
+        try
+        {
+            foreach (var physio in _repository.GetAllPhysios().Values)
+            {
+                if (physio.RegistrationNumber.Equals(registrationNumber) &&
+                    physio.Password.Equals(password))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        catch (Exception e)
+        {
+            throw new Exception("Ha ocurrido un error al comprobar el usuario", e);
+        }
+    }
 }

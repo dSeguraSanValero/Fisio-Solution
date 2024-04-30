@@ -91,15 +91,12 @@ public class PatientService : IPatientService
     {
         try
         {
-            // Obtener el paciente por su DNI
-            Patient patient = GetPatientByDni(dni); // Asignar el resultado de GetPatientByDni a la variable patient
+            Patient patient = GetPatientByDni(dni);
 
             if (patient != null)
             {
-                // Asignar la nueva lista de tratamientos al paciente
-                patient.MyTreatments = treatments;
 
-                // Guardar los cambios en el repositorio
+                patient.MyTreatments = treatments;
                 _repository.SaveChanges();
             }
             else

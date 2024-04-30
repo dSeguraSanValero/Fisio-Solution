@@ -33,13 +33,17 @@ public class MainMenu
             case "1":
                 SingUp();
             break;
+
             case "2":
                 SignIn();
             break;
+            
             case "3":
                 PublicMenu publicMenu = new(_physioService);
                 publicMenu.MenuPublico();
-            break;            
+                MenuPrincipal();
+            break;
+                       
             case "4":
                 Console.WriteLine("¡Buenas noches!");
             break;
@@ -160,8 +164,8 @@ public class MainMenu
             string password = check.CheckNull();
             if (_patientService.CheckLoginPatient(dni, password))
             {
-                UserMenu userMenu = new(_patientService, _physioService);
-                userMenu.MainUserMenu(dni);
+                PrivateMenu privateMenu = new PrivateMenu(_patientService, _physioService);
+                privateMenu.PrivatePatientMenu(dni);
             } 
             else
             {
@@ -172,6 +176,20 @@ public class MainMenu
 
 
         case "2":
+            Console.Write("Introduce tu número de colegiado: ");
+            int registrationNumber = check.CheckInt();
+            Console.Write("Contraseña: ");
+            string physioPassword = check.CheckNull();
+            if (_physioService.CheckLoginPhysio(registrationNumber, physioPassword))
+            {
+                PrivateMenu privateMenu = new PrivateMenu(_patientService, _physioService);
+                privateMenu.PrivatePhysioMenu(registrationNumber);
+            } 
+            else
+            {
+                Console.WriteLine("El correo o la contraseña introducida es incorrecta.");
+                MenuPrincipal();
+            }
         break;
 
 

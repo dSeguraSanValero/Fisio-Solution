@@ -14,6 +14,7 @@ public class PublicMenu
 
     public void MenuPublico()
     {
+        
         Console.WriteLine("1: Por favor introduce el número de colegiado de tu fisio:");
         string input = Console.ReadLine();
         
@@ -38,6 +39,4 @@ public class PublicMenu
             Console.WriteLine("Por favor, introduce un número válido.");
         }
     }
-
-
 }

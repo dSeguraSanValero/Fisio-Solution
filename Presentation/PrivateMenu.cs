@@ -3,18 +3,18 @@ using FisioSolution.Models;
 
 namespace FisioSolution.Presentation;
 
-public class UserMenu
+public class PrivateMenu
 {
     public readonly IPatientService _patientService;
     public readonly IPhysioService _physioService;
 
-    public UserMenu(IPatientService patientService, IPhysioService physioService)
+    public PrivateMenu(IPatientService patientService, IPhysioService physioService)
     {
         _patientService = patientService;
         _physioService = physioService;
     }
 
-    public void MainUserMenu(string dni)
+    public void PrivatePatientMenu(string dni)
     {
         Patient patient = _patientService.GetPatientByDni(dni);
 
@@ -40,37 +40,72 @@ public class UserMenu
 
             case "2":
 
-                // Verificar si el paciente existe
+            break;
+
+
+            default:
+            Console.WriteLine("¡Opción no válida!");
+            return;
+        }
+    }
+
+
+    public void PrivatePhysioMenu(int registrationNumber)
+    {
+        Physio physio = _physioService.GetPhysioByRegistrationNumber(registrationNumber);
+
+        Console.WriteLine($"¡Bienvenido {physio.Name}!");
+        Console.WriteLine("Pulsa 1 para ver tus datos.");
+        Console.WriteLine("Pulsa 2 para añadir un nuevo tratamiento");
+        Console.WriteLine("Pulsa 3 para ver tus tratamientos");
+
+        string userInput = Console.ReadLine() ?? "";
+
+        switch(userInput)
+        {
+            case "1":
+
+            Console.WriteLine($"Nombre: {physio.Name}");
+            Console.WriteLine($"Número de colegiado: {physio.RegistrationNumber}");
+            Console.WriteLine($"Contraseña: {physio.Password}");
+            Console.WriteLine($"{(physio.Availeable ? "Te encuentras en activo." : "No te encuentras en activo")}");
+            Console.WriteLine($"Hora de apertura: {physio.OpeningTime}");
+            Console.WriteLine($"Hora de cierre: {physio.ClosingTime}");
+            Console.WriteLine($"Precio por sesión: {physio.Price}");
+            break;
+
+
+            case "2":
+
+            Console.WriteLine("Introduce el DNI del paciente tratado: ");
+            string dni = Console.ReadLine() ?? "";
+
                 if (_patientService.CheckPatientExist(dni))
                 {
-                    Console.WriteLine("Ingrese el nombre del fisioterapeuta:");
+                    Console.WriteLine("Ingrese el nombre del fisioterapeuta: ");
                     string physioName = Console.ReadLine();
 
-                    Console.WriteLine("Ingrese la causa del tratamiento:");
+                    Console.WriteLine("Ingrese la causa del tratamiento: ");
                     string treatmentCause = Console.ReadLine();
 
-                    Console.WriteLine("Ingrese la fecha del tratamiento (yyyy-MM-dd):");
+                    Console.WriteLine("Ingrese la fecha del tratamiento: ");
                     if (DateTime.TryParse(Console.ReadLine(), out DateTime treatmentDate))
                     {
                         try
                         {
-                            // Obtener lista de tratamientos existente del paciente
                             var existingTreatments = _patientService.GetPatientByDni(dni).MyTreatments;
-
-                            // Crear nuevo tratamiento
+                            
                             Treatment newTreatment = new Treatment(dni, physioName, treatmentCause, treatmentDate);
 
-                            // Agregar el nuevo tratamiento a la lista existente
                             existingTreatments.Add(newTreatment);
 
-                            // Actualizar la lista de tratamientos del paciente en el repositorio
                             _patientService.UpdatePatientTreatments(dni, existingTreatments);
 
                             Console.WriteLine("Tratamiento asignado correctamente.");
                         }
-                        catch (Exception ex)
+                        catch
                         {
-                            Console.WriteLine($"Error al asignar tratamiento: {ex.Message}");
+                            Console.WriteLine("Error al asignar tratamiento");
                         }
                     }
                     else
@@ -81,32 +116,18 @@ public class UserMenu
                 else
                 {
                     Console.WriteLine("No se encontró ningún paciente con el DNI proporcionado.");
+                    PrivatePhysioMenu(registrationNumber);
                 }
-
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
             break;
 
 
-            default:
-            Console.WriteLine("¡Opción no válida!");
+            case "3":
+            break;
+
+
+            default: 
             return;
-        }
+        }    
     }
 
 }

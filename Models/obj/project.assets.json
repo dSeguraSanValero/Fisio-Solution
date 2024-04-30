@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\FisioSolution.Models.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\ciclo DAW\\Segundo ciclo\\Desarrollo web en entorno servidor\\1er semestre\\AA\\FisioSolution\\Models\\FisioSolution.Models.csproj",
       "projectName": "FisioSolution.Models",
-      "projectPath": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\FisioSolution.Models.csproj",
+      "projectPath": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\ciclo DAW\\Segundo ciclo\\Desarrollo web en entorno servidor\\1er semestre\\AA\\FisioSolution\\Models\\FisioSolution.Models.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\obj\\",
+      "outputPath": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\ciclo DAW\\Segundo ciclo\\Desarrollo web en entorno servidor\\1er semestre\\AA\\FisioSolution\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
