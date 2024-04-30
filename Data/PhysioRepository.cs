@@ -8,24 +8,62 @@ public class PhysioRepository : IPhysioRepository
     private Dictionary<string, Physio> _physios = new Dictionary<string, Physio>();
     private readonly string _filePath = "physios.json";
 
+    public PhysioRepository()
+    {
+        if (File.Exists(_filePath))
+        {
+            try
+            {
+                string jsonString = File.ReadAllText(_filePath);
+                var physios = JsonSerializer.Deserialize<IEnumerable<Physio>>(jsonString);
+                _physios = physios.ToDictionary(acc => acc.Id.ToString());
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Ha ocurrido un error al leer el archivo de usuarios", e);
+            }
+        }
+
+        if (_physios.Count == 0)
+        {
+            Physio.PhysioIdSeed = 1;
+        }
+        else
+        {
+            Physio.PhysioIdSeed = _physios.Count + 1;
+        }
+    }
+
     public void AddPhysio(Physio physio)
     {
-        // Leer el contenido actual del archivo JSON, si existe
-        string jsonString = File.Exists(_filePath) ? File.ReadAllText(_filePath) : "[]";
+        _physios[physio.Id.ToString()] = physio;
+    }
 
-        // Deserializar el contenido en una lista de objetos Physio
-        List<Physio> physios = JsonSerializer.Deserialize<List<Physio>>(jsonString);
+    
+    public Physio GetPhysio(int registrationNumber)
+    {
+        foreach (var physio in _physios.Values)
+        {
+            if (physio.RegistrationNumber == registrationNumber)
+            {
+                return physio;
+            }
+        }
+        return null;
+    }
 
-        // Agregar el nuevo physio a la lista
-        physios.Add(physio);
 
+    public Dictionary<string, Physio> GetAllPhysios()
+    {
+        return new Dictionary<string, Physio>(_physios);
+    }
+
+    public void SaveChanges()
+    {
         try
         {
-            // Serializar la lista actualizada en formato JSON con formato
             var options = new JsonSerializerOptions { WriteIndented = true };
-            jsonString = JsonSerializer.Serialize(physios, options);
-
-            // Escribir el JSON actualizado en el archivo
+            string jsonString = JsonSerializer.Serialize(_physios.Values, options);
             File.WriteAllText(_filePath, jsonString);
         }
         catch (Exception e)
@@ -35,3 +73,6 @@ public class PhysioRepository : IPhysioRepository
     }
 
 }
+
+
+

@@ -27,7 +27,17 @@ public class Check
         }
         catch (FormatException)
         {
-            Console.WriteLine("Introduce un formato de hora válido por favor");
+            Console.WriteLine("Por favor introduce un formato de hora válido por favor");
+            return CheckTimeSpan();
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("El valor introducido está fuera del rango permitido");
+            return CheckTimeSpan();
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("Ocurrió un error inesperado");
             return CheckTimeSpan();
         }
     }
@@ -64,7 +74,7 @@ public class Check
         }
     }
 
-        public string CheckBoolean()
+    public string CheckBoolean()
     {
         string input;
         while (true)
@@ -75,6 +85,21 @@ public class Check
                 return input;
             }
             Console.WriteLine("¡Error! Debes indicar si estás disponible o no");
+        }
+    }
+
+    public int CheckInt()
+    {
+        string input = Console.ReadLine();
+        try
+        {
+            int dni = Convert.ToInt32(input);
+            return dni;
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Introduce un formato de hora válido por favor");
+            return CheckInt();
         }
     }
 } 

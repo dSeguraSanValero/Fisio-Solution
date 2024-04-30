@@ -1,11 +1,28 @@
 [
   {
-    "Id": 0,
-    "Name": "Juaniko",
-    "Password": "1234",
-    "BirthDate": "1993-05-11T00:00:00",
-    "Weight": 78.07,
+    "Id": 1,
+    "Name": "Lolo",
+    "Dni": "700",
+    "Password": "123",
+    "BirthDate": "1995-04-22T00:00:00",
+    "Weight": 76.09,
     "Height": 1.80,
-    "Insurance": false
+    "Insurance": true,
+    "MyTreatments": [
+      {
+        "Id": 0,
+        "PhysioName": "dani",
+        "Dni": "700",
+        "TreatmentCause": "tend",
+        "TreatmentDate": "1999-01-01T00:00:00"
+      },
+      {
+        "Id": 1,
+        "PhysioName": "juan",
+        "Dni": "700",
+        "TreatmentCause": "aiiiiiii",
+        "TreatmentDate": "1999-01-01T00:00:00"
+      }
+    ]
   }
 ]

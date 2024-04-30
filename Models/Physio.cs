@@ -3,6 +3,7 @@ public class Physio
 {
    public int Id { get; set; }
    public string? Name { get; set; }
+   public int RegistrationNumber { get; set; }
    public string? Password { get; set; }
    public bool Availeable { get; set; }
    public TimeSpan OpeningTime { get; set; }
@@ -11,10 +12,11 @@ public class Physio
    public static int PhysioIdSeed { get; set; }
 
 
-   public Physio(string name, string password, bool availeable, TimeSpan openingTime, TimeSpan closingTime, decimal price) 
+   public Physio(string name, int registrationNumber, string password, bool availeable, TimeSpan openingTime, TimeSpan closingTime, decimal price) 
    {
       Id = PhysioIdSeed++;
       Name = name;
+      RegistrationNumber = registrationNumber;
       Password = password;
       Availeable = availeable;
       OpeningTime = openingTime;
