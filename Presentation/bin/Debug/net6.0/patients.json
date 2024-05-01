@@ -1,27 +1,29 @@
 [
   {
     "Id": 1,
-    "Name": "Lolo",
-    "Dni": "700",
-    "Password": "123",
-    "BirthDate": "1995-04-22T00:00:00",
-    "Weight": 76.09,
+    "Name": "Juanito",
+    "Dni": "730",
+    "Password": "1234",
+    "BirthDate": "1995-05-22T00:00:00",
+    "Weight": 76.07,
     "Height": 1.80,
-    "Insurance": true,
+    "Insurance": false,
     "MyTreatments": [
       {
-        "Id": 0,
-        "PhysioName": "dani",
-        "Dni": "700",
-        "TreatmentCause": "tend",
-        "TreatmentDate": "1999-01-01T00:00:00"
+        "Id": 2,
+        "PhysioName": "Daniel",
+        "Dni": "730",
+        "TreatmentCause": "Tendinitis",
+        "TreatmentDate": "2024-05-31T00:00:00",
+        "MoreSessionsNeeded": true
       },
       {
-        "Id": 1,
-        "PhysioName": "juan",
-        "Dni": "700",
-        "TreatmentCause": "aiiiiiii",
-        "TreatmentDate": "1999-01-01T00:00:00"
+        "Id": 4,
+        "PhysioName": "Daniel",
+        "Dni": "730",
+        "TreatmentCause": "Tendinitis",
+        "TreatmentDate": "2024-06-22T00:00:00",
+        "MoreSessionsNeeded": false
       }
     ]
   }

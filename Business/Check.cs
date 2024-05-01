@@ -93,8 +93,8 @@ public class Check
         string input = Console.ReadLine();
         try
         {
-            int dni = Convert.ToInt32(input);
-            return dni;
+            int number = Convert.ToInt32(input);
+            return number;
         }
         catch (FormatException)
         {

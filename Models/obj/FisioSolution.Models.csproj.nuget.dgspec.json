@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\FisioSolution.Models.csproj": {}
+    "c:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\FisioSolution.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\FisioSolution.Models.csproj": {
+    "c:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\FisioSolution.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\FisioSolution.Models.csproj",
+        "projectUniqueName": "c:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\FisioSolution.Models.csproj",
         "projectName": "FisioSolution.Models",
-        "projectPath": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\FisioSolution.Models.csproj",
+        "projectPath": "c:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\FisioSolution.Models.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\obj\\",
+        "outputPath": "c:\\Users\\Lenovo\\OneDrive\\Escritorio\\FisioSolution\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"

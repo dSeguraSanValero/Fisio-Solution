@@ -72,4 +72,9 @@ public class PatientRepository : IPatientRepository
             throw new Exception("Ha ocurrido un error al guardar cambios en el archivo de usuarios", e);
         }
     }
+
+    public void RemovePatient(Patient patient)
+    {
+        _patients.Remove(patient.Id.ToString());
+    }
 }

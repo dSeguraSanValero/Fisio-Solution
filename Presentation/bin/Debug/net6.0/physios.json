@@ -1,0 +1,46 @@
+[
+  {
+    "Id": 1,
+    "Name": "Daniel",
+    "RegistrationNumber": 1492,
+    "Password": "1234",
+    "Availeable": true,
+    "OpeningTime": "08:00:00",
+    "ClosingTime": "17:00:00",
+    "Price": 40.00,
+    "MyTreatments": [
+      {
+        "Id": 1,
+        "PhysioName": "Daniel",
+        "Dni": "730",
+        "TreatmentCause": "esguince de tobillo",
+        "TreatmentDate": "2024-05-30T00:00:00",
+        "MoreSessionsNeeded": false
+      },
+      {
+        "Id": 3,
+        "PhysioName": "Daniel",
+        "Dni": "730",
+        "TreatmentCause": "Trocanteritis",
+        "TreatmentDate": "2019-07-22T00:00:00",
+        "MoreSessionsNeeded": true
+      },
+      {
+        "Id": 2,
+        "PhysioName": "Daniel",
+        "Dni": "730",
+        "TreatmentCause": "Tendinitis",
+        "TreatmentDate": "2024-05-31T00:00:00",
+        "MoreSessionsNeeded": true
+      },
+      {
+        "Id": 4,
+        "PhysioName": "Daniel",
+        "Dni": "730",
+        "TreatmentCause": "Tendinitis",
+        "TreatmentDate": "2024-06-22T00:00:00",
+        "MoreSessionsNeeded": false
+      }
+    ]
+  }
+]

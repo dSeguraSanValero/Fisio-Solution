@@ -9,4 +9,5 @@ public interface IPatientService
     public bool CheckLoginPatient(string dni, string pasword);
     public Patient GetPatientByDni(string dni);
     public void UpdatePatientTreatments(string dni, List<Treatment> treatments);
+    public void DeletePatient(Patient patient);
 }

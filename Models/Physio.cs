@@ -9,6 +9,7 @@ public class Physio
    public TimeSpan OpeningTime { get; set; }
    public TimeSpan ClosingTime { get; set; }
    public decimal Price { get; set; }
+   public List<Treatment> MyTreatments { get; set; }
    public static int PhysioIdSeed { get; set; }
 
 
@@ -22,6 +23,7 @@ public class Physio
       OpeningTime = openingTime;
       ClosingTime = closingTime;
       Price = price;
+      MyTreatments = new List<Treatment>();
    }
 
 }

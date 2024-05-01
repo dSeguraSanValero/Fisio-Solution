@@ -1,8 +1,7 @@
-using System.Collections;
 using FisioSolution.Business;
-using FisioSolution.Presentation;
 
-namespace FisioSolution.MainMenu;
+
+namespace FisioSolution.Presentation;
 
 public class MainMenu
 {
@@ -20,6 +19,7 @@ public class MainMenu
 
     public void MenuPrincipal()
     {
+    Console.WriteLine($"-----------------------------------------");
     Console.WriteLine("BIENVENIDO A FISIO SOLUTION");
     Console.WriteLine("1: Registrar nuevo usuario");
     Console.WriteLine("2: Iniciar sesión");
@@ -33,13 +33,17 @@ public class MainMenu
             case "1":
                 SingUp();
             break;
+
             case "2":
                 SignIn();
             break;
+            
             case "3":
-                PublicMenu publicMenu = new(_physioService);
+                PublicMenu publicMenu = new(_physioService, _patientService);
                 publicMenu.MenuPublico();
-            break;            
+                MenuPrincipal();
+            break;
+                       
             case "4":
                 Console.WriteLine("¡Buenas noches!");
             break;
@@ -52,11 +56,12 @@ public class MainMenu
 
     private void SingUp() 
     {
+        Console.WriteLine($"-----------------------------------------");
         Console.WriteLine("1: Registrarse como fisioterapeuta");
         Console.WriteLine("2: Registrarse como paciente");
         Console.WriteLine("3: Volver al menú principal");
 
-        string userInput = Console.ReadLine() ?? "";
+        string userInput = check.CheckNull();
 
         switch(userInput)
         {
@@ -65,8 +70,7 @@ public class MainMenu
             string physioName = check.CheckNull();
 
             Console.WriteLine("Introduce tu número de colegiado:");
-            string Input = Console.ReadLine();
-            int registrationNumber = Convert.ToInt32(Input);
+            int registrationNumber = check.CheckInt();
             
             Console.WriteLine("Introduce tu contraseña:");
             string physioPassword = check.CheckNull();
@@ -141,6 +145,7 @@ public class MainMenu
 
             default:
             Console.WriteLine("¡Opción no válida!");
+            MenuPrincipal();
             return;
         }
     }
@@ -148,6 +153,7 @@ public class MainMenu
 
     private void SignIn()
     {
+        Console.WriteLine($"-----------------------------------------");
         Console.Write("Pulsa 1 si eres paciente, o 2 si eres fisioterapeuta:");
         string option = check.CheckNull();
 
@@ -159,9 +165,9 @@ public class MainMenu
             Console.Write("Contraseña: ");
             string password = check.CheckNull();
             if (_patientService.CheckLoginPatient(dni, password))
-            {
-                UserMenu userMenu = new(_patientService, _physioService);
-                userMenu.MainUserMenu(dni);
+            {  
+                PrivateMenu privateMenu = new PrivateMenu(_patientService, _physioService);
+                privateMenu.PrivatePatientMenu(dni);
             } 
             else
             {
@@ -172,6 +178,20 @@ public class MainMenu
 
 
         case "2":
+            Console.Write("Introduce tu número de colegiado: ");
+            int registrationNumber = check.CheckInt();
+            Console.Write("Contraseña: ");
+            string physioPassword = check.CheckNull();
+            if (_physioService.CheckLoginPhysio(registrationNumber, physioPassword))
+            {
+                PrivateMenu privateMenu = new PrivateMenu(_patientService, _physioService);
+                privateMenu.PrivatePhysioMenu(registrationNumber);
+            } 
+            else
+            {
+                Console.WriteLine("El correo o la contraseña introducida es incorrecta.");
+                MenuPrincipal();
+            }
         break;
 
 

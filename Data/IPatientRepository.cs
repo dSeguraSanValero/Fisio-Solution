@@ -8,4 +8,6 @@ public interface IPatientRepository
     void SaveChanges();
     Patient GetPatient(string dni);
     Dictionary<string, Patient> GetAllPatients();
+    public void RemovePatient(Patient patient);
+
 }

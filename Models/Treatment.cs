@@ -7,13 +7,15 @@ public class Treatment
     public string? TreatmentCause { get; set; }
     public DateTime TreatmentDate { get; set; }
     public static int TreatmentIdSeed { get; set; }
+    public bool MoreSessionsNeeded { get; set; }
 
-    public Treatment(string dni, string physioName, string treatmentCause, DateTime treatmentDate) 
+    public Treatment(string dni, string physioName, string treatmentCause, DateTime treatmentDate, bool moreSessionsNeeded ) 
    {
       Id = TreatmentIdSeed++;
       PhysioName = physioName;
       Dni = dni;
       TreatmentCause = treatmentCause;
       TreatmentDate = treatmentDate;
+      MoreSessionsNeeded = moreSessionsNeeded; 
    }
 }
