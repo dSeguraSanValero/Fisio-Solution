@@ -101,5 +101,28 @@ public class PhysioService : IPhysioService
         }
     }
 
-    
+    public void PrintPhysioTreatments()
+    {
+        try
+        {
+            var allPhysios = _repository.GetAllPhysios();
+
+            foreach (var physio in allPhysios.Values)
+            {
+                Console.WriteLine($"Nombre: {physio.Name}");
+                Console.WriteLine($"Número de Colegiado: {physio.RegistrationNumber}");
+                Console.WriteLine($"Disponibilidad: {(physio.Availeable ? "Disponible" : "No disponible")}");
+                Console.WriteLine($"Horario de apertura: {physio.OpeningTime}");
+                Console.WriteLine($"Horario de cierre: {physio.ClosingTime}");
+                Console.WriteLine($"Precio por sesión: {physio.Price}");
+                Console.WriteLine($"------------------------------------");
+                Console.WriteLine("");
+            }
+        }
+        catch (Exception e)
+        {
+            throw new Exception("Ha ocurrido un error al imprimir los tratamientos de los fisioterapeutas.", e);
+        }
+    }
+
 }

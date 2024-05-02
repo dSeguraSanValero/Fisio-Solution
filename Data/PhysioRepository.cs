@@ -71,8 +71,6 @@ public class PhysioRepository : IPhysioRepository
             throw new Exception("Ha ocurrido un error al guardar cambios en el archivo de usuarios", e);
         }
     }
-
-
 }
 
 

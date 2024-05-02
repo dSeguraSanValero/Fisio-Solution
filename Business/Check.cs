@@ -53,7 +53,7 @@ public class Check
         }
         catch (FormatException)
         {
-            Console.WriteLine("Introduce un formato de hora válido por favor");
+            Console.WriteLine("Introduce un formato de fecha válido por favor");
             return CheckDateTime();
         }
     }
@@ -69,7 +69,7 @@ public class Check
             {
                 return price;
             }
-            Console.WriteLine("Introduce un formato de precio válido");
+            Console.WriteLine("Introduce un formato de número decimal válido");
             return CheckDecimal();
         }
     }
@@ -84,7 +84,7 @@ public class Check
             {
                 return input;
             }
-            Console.WriteLine("¡Error! Debes indicar si estás disponible o no");
+            Console.WriteLine("¡Error! Debes introducir y/n (yes/no)");
         }
     }
 
@@ -98,7 +98,7 @@ public class Check
         }
         catch (FormatException)
         {
-            Console.WriteLine("Introduce un formato de hora válido por favor");
+            Console.WriteLine("Introduce un formato de número válido");
             return CheckInt();
         }
     }

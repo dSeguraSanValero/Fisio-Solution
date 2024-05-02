@@ -26,7 +26,7 @@ public class MainMenu
     Console.WriteLine("3: Buscar un fisioterapeuta");
     Console.WriteLine("4: Cerrar sesión");
     
-    string userInput = Console.ReadLine() ?? "";
+    string userInput = check.CheckNull();
     
     switch(userInput)
         {
@@ -164,15 +164,23 @@ public class MainMenu
             string dni = check.CheckNull();
             Console.Write("Contraseña: ");
             string password = check.CheckNull();
-            if (_patientService.CheckLoginPatient(dni, password))
-            {  
-                PrivateMenu privateMenu = new PrivateMenu(_patientService, _physioService);
-                privateMenu.PrivatePatientMenu(dni);
-            } 
-            else
+        
+            try
             {
-                Console.WriteLine("El correo o la contraseña introducida es incorrecta.");
-                MenuPrincipal();
+                if (_patientService.CheckLoginPatient(dni, password))
+                {  
+                    PrivateMenu privateMenu = new PrivateMenu(_patientService, _physioService);
+                    privateMenu.PrivatePatientMenu(dni);
+                } 
+                else
+                {
+                    Console.WriteLine("El correo o la contraseña introducida es incorrecta.");
+                    MenuPrincipal();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ha ocurrido un error: " + ex.Message);
             }
         break;
 
@@ -182,21 +190,30 @@ public class MainMenu
             int registrationNumber = check.CheckInt();
             Console.Write("Contraseña: ");
             string physioPassword = check.CheckNull();
-            if (_physioService.CheckLoginPhysio(registrationNumber, physioPassword))
+            
+            try
             {
-                PrivateMenu privateMenu = new PrivateMenu(_patientService, _physioService);
-                privateMenu.PrivatePhysioMenu(registrationNumber);
-            } 
-            else
+                if (_physioService.CheckLoginPhysio(registrationNumber, physioPassword))
+                {
+                    PrivateMenu privateMenu = new PrivateMenu(_patientService, _physioService);
+                    privateMenu.PrivatePhysioMenu(registrationNumber);
+                } 
+                else
+                {
+                    Console.WriteLine("El correo o la contraseña introducida es incorrecta.");
+                    MenuPrincipal();
+                }
+            }
+            catch (Exception ex)
             {
-                Console.WriteLine("El correo o la contraseña introducida es incorrecta.");
-                MenuPrincipal();
+                Console.WriteLine("Ha ocurrido un error: " + ex.Message);
             }
         break;
 
 
         default:
-        
+            Console.WriteLine("¡Opción no válida!");
+            MenuPrincipal();
         return;
         }
     }

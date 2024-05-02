@@ -10,4 +10,5 @@ public interface IPhysioService
     public Physio GetPhysioByRegistrationNumber(int registrationNumber);
     public bool CheckLoginPhysio(int registrationNumber, string password);
     public void UpdatePhysioTreatments(Physio physio, List<Treatment> treatments);
+    public void PrintPhysioTreatments();
 }

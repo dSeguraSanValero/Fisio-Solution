@@ -122,4 +122,31 @@ public class PatientService : IPatientService
             throw new Exception("Ha ocurrido un error al borrar el usuario", e);
         }
     }
+
+    public void UpdatePatientData(Patient patient, string newName, string newPassword, decimal newWeight, decimal newHeight, bool newInsurance)
+    {
+        try
+        {
+            if (patient != null)
+            {
+                patient.Name = newName;
+                patient.Password = newPassword;
+                patient.Weight = newWeight;
+                patient.Height = newHeight;
+                patient.Insurance = newInsurance;
+
+                _repository.SaveChanges();
+            }
+            else
+            {
+                throw new ArgumentNullException(nameof(patient), "El paciente proporcionado es nulo.");
+            }
+        }
+        catch (Exception e)
+        {
+            throw new Exception("Ha ocurrido un error al actualizar los datos del paciente.", e);
+        }
+    }
+
+
 }
