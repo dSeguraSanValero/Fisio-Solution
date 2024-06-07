@@ -162,7 +162,7 @@ public class PrivateMenu
                 
                     Console.WriteLine("Ingrese la fecha del tratamiento: ");
                     
-                    DateTime treatmentDate = check.CheckDateTime();
+                    DateOnly treatmentDate = check.CheckDateOnly();
                     try
                     {
                         var patientExistingTreatments = _patientService.GetPatientByDni(dni).MyTreatments;

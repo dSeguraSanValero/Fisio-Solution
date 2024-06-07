@@ -6,10 +6,17 @@ namespace FisioSolution.Data;
 public class PhysioRepository : IPhysioRepository
 {
     private Dictionary<string, Physio> _physios = new Dictionary<string, Physio>();
-    private readonly string _filePath = "physios.json";
+    private readonly string _filePath;
 
     public PhysioRepository()
     {
+        _filePath = Environment.GetEnvironmentVariable("JSON_FILE_PATH");
+
+        if (string.IsNullOrEmpty(_filePath))
+        {
+            _filePath = "../../../../Data/physios.json";
+        }
+
         if (File.Exists(_filePath))
         {
             try
