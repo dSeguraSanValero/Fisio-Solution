@@ -42,19 +42,19 @@ public class Check
         }
     }
 
-    public DateTime CheckDateTime()
+     public DateOnly CheckDateOnly()
     {
         string input = Console.ReadLine();
 
         try
         {
-            DateTime fecha = DateTime.Parse(input);
-            return fecha;
+            DateOnly date = DateOnly.Parse(input);
+            return date;
         }
         catch (FormatException)
         {
             Console.WriteLine("Introduce un formato de fecha válido por favor");
-            return CheckDateTime();
+            return CheckDateOnly();
         }
     }
 

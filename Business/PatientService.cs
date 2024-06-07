@@ -12,7 +12,7 @@ public class PatientService : IPatientService
         _repository = repository ?? throw new ArgumentNullException(nameof(repository));
     }
 
-    public void RegisterPatient(string name, string dni, string password, DateTime birthDate, decimal weight, decimal height, bool insurance)
+    public void RegisterPatient(string name, string dni, string password, DateOnly birthDate, decimal weight, decimal height, bool insurance)
     {
         try 
         {
