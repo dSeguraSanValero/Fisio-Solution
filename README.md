@@ -9,9 +9,11 @@ Puntos obligatorios:
 - Modelos de datos con 3 clases y 6 atributos.
 - Funcionalidad de búsqueda por al menos un campo.
 - Aplicación contenerizada.
-- Imagen alojada en un registro de contenedores. "a27238/fisiosolution:latest"
+- Imagen alojada en un registro de contenedores.
+	(Imagen pública en Docker Hub: a27238/Fisio-Solution:latest)
 
 Puntos extra:
-- Utilizamos la metodología gitflow durante su desarrollo.
+- Utilizamos la metodología gitflow durante su desarrollo. 
+	(link al repositorio: https://github.com/dSeguraSanValero/Fisio-Solution.git)
 - La aplicación escribe y almacena datos en ficheros Json.
 - Utiliza una variable de entorno en el contenedor.

@@ -112,7 +112,7 @@ public class MainMenu
             Console.WriteLine("Introduce tu contraseña:");
             string patientPassword = check.CheckNull();
 
-            Console.WriteLine("Introduce tu fecha de nacimiento: xx/xx/xxxx");
+            Console.WriteLine("Introduce tu fecha de nacimiento: xxxx/xx/xx");
             DateOnly fechaNacimiento = check.CheckDateOnly();
 
             Console.WriteLine("Introduce tu peso (por ejemplo 75,43):");

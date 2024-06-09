@@ -10,12 +10,8 @@ public class PhysioRepository : IPhysioRepository
 
     public PhysioRepository()
     {
-        _filePath = Environment.GetEnvironmentVariable("JSON_FILE_PATH");
-
-        if (string.IsNullOrEmpty(_filePath))
-        {
-            _filePath = "../../../../Data/physios.json";
-        }
+        string physiosJsonPath = Environment.GetEnvironmentVariable("PHYSIOS_JSON_PATH");
+        _filePath = string.IsNullOrEmpty(physiosJsonPath) ? "../../../../Data/physios.json" : physiosJsonPath;
 
         if (File.Exists(_filePath))
         {

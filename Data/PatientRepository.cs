@@ -13,12 +13,8 @@ namespace FisioSolution.Data
 
         public PatientRepository()
         {
-            _filePath = Environment.GetEnvironmentVariable("JSON_FILE_PATH");
-
-            if (string.IsNullOrEmpty(_filePath))
-            {
-                _filePath = "../../../../Data/patients.json";
-            }
+            string patientsJsonPath = Environment.GetEnvironmentVariable("PATIENTS_JSON_PATH");
+            _filePath = string.IsNullOrEmpty(patientsJsonPath) ? "../../../../Data/patients.json" : patientsJsonPath;
 
             if (File.Exists(_filePath))
             {
