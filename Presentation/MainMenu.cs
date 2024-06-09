@@ -24,7 +24,6 @@ public class MainMenu
     Console.WriteLine("1: Registrar nuevo usuario");
     Console.WriteLine("2: Iniciar sesión");
     Console.WriteLine("3: Buscar un fisioterapeuta");
-    Console.WriteLine("4: Cerrar sesión");
     
     string userInput = check.CheckNull();
     
@@ -43,10 +42,7 @@ public class MainMenu
                 publicMenu.MenuPublico();
                 MenuPrincipal();
             break;
-                       
-            case "4":
-                Console.WriteLine("¡Buenas noches!");
-            break;
+            
             default:
                 Console.WriteLine("¡Opción no válida!");
                 MenuPrincipal();

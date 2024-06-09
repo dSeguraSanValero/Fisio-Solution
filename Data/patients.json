@@ -1,0 +1,13 @@
+[
+  {
+    "Id": 1,
+    "Name": "Tomas",
+    "Dni": "730141414",
+    "Password": "1234",
+    "BirthDate": "1996-08-08",
+    "Weight": 75.80,
+    "Height": 1.60,
+    "Insurance": false,
+    "MyTreatments": []
+  }
+]
